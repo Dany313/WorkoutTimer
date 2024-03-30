@@ -1,23 +1,39 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_overlay_window/flutter_overlay_window.dart';
+import 'package:test_drive/widgets/FloatingTimer.dart';
 import 'package:test_drive/widgets/NumbersScroll.dart';
 import 'package:test_drive/widgets/TimeInputs.dart';
+import 'package:flutter_overlay_apps/flutter_overlay_apps.dart';
 
 
-void main() => runApp(const MyApp());
 
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if(!await FlutterOverlayWindow.isPermissionGranted()){
+    FlutterOverlayWindow.requestPermission();
+  }
+  runApp(const MyApp());
+}
 
+@pragma("vm:entry-point")
+void overlayMain() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+     MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Material(
+        child: Container(
+          color: Colors.red,
+          child: FloatingTimer(ore: "1", minuti: "02", secondi: "03",),
+        ),
+      ),
+    ),
+  );
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
-
-  // overlay entry point
-  @pragma("vm:entry-point")
-  void overlayMain() {
-    runApp(const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Material(child: Text("My overlay"))
-    ));
-  }
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -25,7 +41,6 @@ class MyApp extends StatefulWidget {
 
 
 class _MyAppState extends State<MyApp> {
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,36 +51,8 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text(appTitle),
           ),
-          body: const TimeInputs()
+          body: Container(child: const TimeInputs())
         ));
   }
 }
 
-// class NumbersScroll extends StatelessWidget {
-//
-//   final int itemCount;
-//
-//   const NumbersScroll({super.key, required this.itemCount});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return  SizedBox(
-//       width: 150,
-//       height: 300,
-//       child: ListView.builder(
-//         itemCount: itemCount,
-//         padding: EdgeInsets.all(8.0),
-//         itemBuilder: (BuildContext context, int index) {
-//           return Container(
-//             alignment: Alignment.center,
-//             color: Colors.orange,
-//             width: 20,
-//             height: 100,
-//             margin: EdgeInsets.only(bottom: 2.0),
-//             child: Text("$index"),
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }

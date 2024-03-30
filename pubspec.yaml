@@ -28,7 +28,6 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter_overlay_window: any
   scrollable_positioned_list: ^0.3.8
   flutter:
     sdk: flutter
@@ -37,6 +36,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  flutter_overlay_apps: ^1.2.0
+  flutter_overlay_window: ^0.4.3
 
 dev_dependencies:
   flutter_test:
