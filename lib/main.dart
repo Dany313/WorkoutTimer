@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_window/flutter_overlay_window.dart';
+import 'package:test_drive/pages/first_page.dart';
 import 'package:test_drive/widgets/FloatingTimer.dart';
 import 'package:test_drive/widgets/NumbersScroll.dart';
 import 'package:test_drive/widgets/TimeInputs.dart';
@@ -51,7 +52,7 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text(appTitle),
           ),
-          body: Container(child: const TimeInputs())
+          body: const FirstPage()
         ));
   }
 }
