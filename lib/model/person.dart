@@ -13,7 +13,7 @@ class Person {
     return Person(
         firstName: json['name']['first'],
         lastName: json['name']['last'],
-        image: json['picture']['thumbnail'],
+        image: json['picture']['large'],
     );
   }
 }

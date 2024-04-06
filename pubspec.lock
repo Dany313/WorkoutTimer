@@ -82,10 +82,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_overlay_window
-      sha256: "5bab855f641b4fca176c9002cd351b53cce518102721e4aec60eda3c74054360"
+      sha256: af871da9270bf5d67e5a657d2e286dfafa43f3417e98fa9e3c06da3f9d0f340e
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.3"
+    version: "0.4.4"
   flutter_test:
     dependency: "direct dev"
     description: flutter
