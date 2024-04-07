@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_window/flutter_overlay_window.dart';
-import 'package:test_drive/pages/first_page.dart';
+import 'package:test_drive/pages/fragments/rubrica_fragment.dart';
 import 'package:test_drive/pages/home_page.dart';
 import 'package:test_drive/widgets/FloatingTimer.dart';
 import 'package:test_drive/widgets/NumbersScroll.dart';

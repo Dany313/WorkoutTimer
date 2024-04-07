@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import '../model/person.dart';
-import '../widgets/person_card.dart';
+import '../../model/person.dart';
+import '../../widgets/person_card.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class RubricaFragment extends StatefulWidget {
+  const RubricaFragment({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<RubricaFragment> createState() => _RubricaFragmentState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _RubricaFragmentState extends State<RubricaFragment> {
   late Future<List<Person>> people;
 
   @override
